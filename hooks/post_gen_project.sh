@@ -7,12 +7,6 @@ echo '-- Creating a new python virtual environment'
 mkvirtualenv -q "$REPO_NAME"
 workon "$REPO_NAME"
 
-echo '-- Installing pre-requisite packages'
-sudo apt-get install -yq python2.7 > /dev/null
-sudo apt-get install -yq python-pip > /dev/null
-sudo apt-get install -yq git > /dev/null
-sudo apt-get install -yq pep8 > /dev/null
-
 echo '-- Installing pip packages in virtual environment'
 pip install -q django
 pip install -q south
