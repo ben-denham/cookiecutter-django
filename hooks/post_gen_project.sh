@@ -1,7 +1,19 @@
 #!/bin/bash
+# Inspired by http://www.jeffknupp.com/blog/2013/12/18/starting-a-django-16-project-the-right-way/
+# Created 16/01/2014 for Django 1.6 on Ubuntu 12.04 LTS.
+# Created by Ben Denham.
+
+VIRTUALENV_CONFIG="
+# Virtualenv config
+export WORKON_HOME=\$HOME/.virtualenvs
+export PROJECT_HOME=$DEV_DIRECTORY
+source /usr/local/bin/virtualenvwrapper.sh"
 REPO_NAME=$(basename $(pwd))
 SITE_NAME=$(basename $(ls -d */ | grep -vF "docs/
 requirements/"))
+
+echo '-- Executing Virtualenv config'
+eval "$VIRTUALENV_CONFIG"
 
 echo '-- Creating a new python virtual environment'
 mkvirtualenv -q "$REPO_NAME"
