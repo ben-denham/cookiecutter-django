@@ -1,3 +1,4 @@
+#!/bin/bash
 REPO_NAME=$(basename $(pwd))
 SITE_NAME=$(basename $(ls -d */ | grep -vF "docs/
 requirements/"))

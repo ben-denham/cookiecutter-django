@@ -1,3 +1,4 @@
+#!/bin/bash
 echo '-- Installing pre-requisite packages'
 sudo apt-get install -yq python2.7 > /dev/null
 sudo apt-get install -yq python-pip > /dev/null
