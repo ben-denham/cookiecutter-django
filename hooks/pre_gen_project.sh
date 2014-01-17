@@ -13,7 +13,7 @@ sudo apt-get install -yq git > /dev/null
 sudo apt-get install -yq pep8 > /dev/null
 
 echo '-- Installing pre-requisite pip packages'
-pip install -q virtualenvwrapper
+sudo pip install -q virtualenvwrapper
 
 VIRTUALENV_CONFIG="
 # Virtualenv config
