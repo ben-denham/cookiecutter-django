@@ -11,7 +11,10 @@ sudo apt-get install -yq python2.7 > /dev/null
 sudo apt-get install -yq python-pip > /dev/null
 sudo apt-get install -yq git > /dev/null
 sudo apt-get install -yq pep8 > /dev/null
-sudo apt-get install -yq libpq-dev
+sudo apt-get install -yq postgresql-common > /dev/null
+sudo apt-get install -yq libpq-dev > /dev/null
+sudo apt-get install -yq postgresql-server-dev-all > /dev/null
+sudo apt-get install -yq python-dev > /dev/null
 
 echo '-- Installing pre-requisite pip packages'
 sudo pip install -q virtualenvwrapper

@@ -8,6 +8,7 @@ VIRTUALENV_CONFIG="
 export WORKON_HOME=\$HOME/.virtualenvs
 export PROJECT_HOME=$DEV_DIRECTORY
 source /usr/local/bin/virtualenvwrapper.sh"
+
 REPO_NAME=$(basename $(pwd))
 SITE_NAME=$(basename $(ls -d */ | grep -vF "docs/
 requirements/"))
@@ -20,17 +21,10 @@ mkvirtualenv -q "$REPO_NAME"
 workon "$REPO_NAME"
 
 echo '-- Installing pip packages in virtual environment'
-pip install -q django
-pip install -q south
-pip install -q unipath
-pip install -q nose
-pip install -r requirements/local.txt
+pip install -qr requirements/local.txt
 
 echo '-- Making manage.py executable'
 chmod +x "$SITE_NAME/manage.py"
-
-echo '-- Saving pip requirements to requirements.txt'
-pip freeze >> requirements/local.txt
 
 export INSTRUCTIONS=$(cat <<EOF
 -------------------------------------------------------
@@ -46,7 +40,7 @@ EOF
 )
 
 echo "-- Saving instructions in README.rst"
-echo "$INSTRUCTIONS" >> README.txt
+echo "$INSTRUCTIONS" >> README.rst
 
 echo '-- Initializing git repo'
 echo '*.pyc' >> .gitignore
@@ -102,7 +96,7 @@ echo '-- Syncing database'
 
 if [ $? != 0 ]; then
     echo '*** Database could not be synced ***'
-    echo "*** You can try to sync the database again with '$SITE_NAME/manage.py syncdb'."
+    echo "*** You can try to sync the database again with '$REPO_NAME/$SITE_NAME/manage.py syncdb'."
     exit 3
 else
     git add .
