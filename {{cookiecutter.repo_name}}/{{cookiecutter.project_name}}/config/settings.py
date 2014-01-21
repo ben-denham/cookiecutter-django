@@ -215,12 +215,6 @@ class Common(Configuration):
     ACCOUNT_EMAIL_VERIFICATION = "mandatory"
     ########## END AUTHENTICATION CONFIGURATION
 
-    ########## Custom user app defaults
-    # Select the correct user model
-    AUTH_USER_MODEL = "users.User"
-    LOGIN_REDIRECT_URL = "users:redirect"
-    ########## END Custom user app defaults
-
     ########## LOGGING CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#logging
     # A sample logging configuration. The only tangible logging
