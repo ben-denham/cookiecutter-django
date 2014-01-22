@@ -106,7 +106,7 @@ class Common(Configuration):
 
     ########## DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    DATABASES = values.DatabaseURLValue('sqlite:///{{cookiecutter.repo_name}}')
+    DATABASES = values.DatabaseURLValue('sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))
     ########## END DATABASE CONFIGURATION
 
     ########## CACHING
