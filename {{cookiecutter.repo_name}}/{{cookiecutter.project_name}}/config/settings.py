@@ -58,14 +58,6 @@ class Common(Configuration):
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
     INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
-
-    INSTALLED_APPS += (
-        # Needs to come last for now because of a weird edge case between
-        #   South and allauth
-        'allauth',  # registration
-        'allauth.account',  # registration
-        'allauth.socialaccount',  # registration
-    )
     ########## END APP CONFIGURATION
 
     ########## MIDDLEWARE CONFIGURATION
